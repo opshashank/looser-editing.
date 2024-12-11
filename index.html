@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Header and Footer</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header style */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #000;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        header:hover {
+            background: linear-gradient(45deg, #000000, #2e2e2e);
+        }
+
+        .left-side {
+            font-size: 2em;
+            font-weight: bold;
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+            animation: neon-flicker 1.5s infinite alternate ease-in-out;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+        }
+
+        .form-icon {
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #39ff14;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .form-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .form-container {
+            position: absolute;
+            top: 70px;
+            right: 40px;
+            width: 300px;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .form-container.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .form-container h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            color: #39ff14;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background: #222;
+            color: #fff;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background: #39ff14;
+            color: #000;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background: #2ed92f;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        footer h1 {
+            font-size: 3em;
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14;
+            animation: neon-flicker 2s infinite alternate ease-in-out;
+        }
+
+        footer p {
+            font-size: 1.5em;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        footer img {
+            max-width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        @keyframes neon-flicker {
+            0%, 100% {
+                text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14;
+            }
+            50% {
+                text-shadow: 0 0 15px #39ff14, 0 0 30px #39ff14, 0 0 50px #39ff14;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            footer img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="left-side">Looser Editing</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="course.html">Course</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="form-icon" onclick="toggleForm()">✉</div>
+        <div class="form-container" id="formContainer">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="number">Number</label>
+                <input type="tel" id="number" name="number" placeholder="Enter your number" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="qualification">Qualification</label>
+                <input type="text" id="qualification" name="qualification" placeholder="Enter your qualification" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </header>
+
+    <footer>
+        <h1>Create What You Can Think</h1>
+        <p>
+            Unleash your creativity with the power of video editing and cinematic techniques. 
+            Transform your ideas into stunning visuals that captivate and inspire!
+        </p>
+        <img src="D:\MY Website\pmy/A.jpg" alt="Video Editing & Cinematic Effects">
+    </footer>
+
+    <script>
+        function toggleForm() {
+            const formContainer = document.getElementById('formContainer');
+            formContainer.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

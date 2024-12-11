@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Neon Cards with Buy Button</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 100vh;
+            color: #fff;
+        }
+
+        /* Card styling */
+        .card {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            background: #222;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Neon title */
+        .card h2 {
+            font-size: 26px;
+            color: #39ff14; /* Neon green */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            animation: neon-glow 1.5s infinite alternate;
+        }
+
+        @keyframes neon-glow {
+            0%, 100% {
+                text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+            }
+            50% {
+                text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+            }
+        }
+
+        /* Price styling */
+        .price {
+            font-size: 22px;
+            color: #ff073a; /* Neon red */
+            margin-bottom: 20px;
+        }
+
+        /* Features list */
+        .features {
+            text-align: left;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features li {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #ddd;
+        }
+
+        .features li::before {
+            content: '\2714'; /* Checkmark */
+            color: #39ff14;
+            margin-right: 8px;
+        }
+
+        /* Buy Button */
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff073a;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 7, 58, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta:hover {
+            background-color: #39ff14; /* Neon green hover */
+            transform: scale(1.1);
+        }
+
+        .cta i {
+            margin-right: 8px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .card {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Lite Card -->
+    <div class="card">
+        <h2>Lite</h2>
+        <div class="price">3000 Rs</div>
+        <ul class="features">
+            <li>Studio Quality</li>
+            <li>Weekly 3 Lecture Classes</li>
+        </ul>
+        <button class="cta">
+            <i>&#128722;</i> Buy
+        </button>
+    </div>
+
+    <!-- Pro Card -->
+    <div class="card">
+        <h2>Pro</h2>
+        <div class="price">7000 Rs</div>
+        <ul class="features">
+            <li>Everything in Lite</li>
+            <li>Dedicated Mentors to Guide You</li>
+            <li>BONUS: Weekly Social Media Masterclasses</li>
+            <li>Access to Edit Battles, Community Games & Challenges</li>
+        </ul>
+        <button class="cta">
+            <i>&#128722;</i> Buy
+        </button>
+    </div>
+</body>
+</html>

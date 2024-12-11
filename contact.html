@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Design</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+    }
+    .footer-left img {
+      width: 120px;
+      border-radius: 50%;
+    }
+    .footer-right {
+      text-align: right;
+    }
+    .footer-right h1 {
+      font-size: 24px;
+      margin: 0;
+      font-weight: bold;
+      color: white;
+    }
+    .footer-right p, .footer-links {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+    .footer-links a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+    .footer-links a:hover {
+      color: #39ff14; /* Neon green */
+    }
+    .footer-right a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+    }
+    .footer-right a i {
+      margin-right: 8px;
+      font-size: 18px;
+    }
+    .footer-right a:hover {
+      color: #39ff14;
+    }
+    .copyright {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    @media (max-width: 600px) {
+      .footer-right {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <footer>
+    <div class="footer-left">
+      <img src="D:\pic2/00.jpg" alt="Shashank Mishra's Profile Picture">
+    </div>
+    <div class="footer-right">
+      <h1>Shashank Mishra Official Website</h1>
+      <p>
+        <a href="mailto:shashank.00361@gmail.com">
+          <i class="fas fa-envelope"></i> shashank.00361@gmail.com
+        </a>
+      </p>
+      <p>
+        <a href="https://instagram.com/shashankmishra361" target="_blank">
+          <i class="fab fa-instagram"></i> shashankmishra361
+        </a>
+      </p>
+      <div class="footer-links">
+        <a href="my website.html">Home</a>
+        <a href="course.html">course</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </div>
+      <p class="copyright">
+        &copy; <script>document.write(new Date().getFullYear());</script> Shashank Mishra. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
